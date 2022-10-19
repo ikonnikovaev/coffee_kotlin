@@ -115,7 +115,7 @@ class CoffeeMachine {
             Action.TAKE -> take()
             Action.REMAINING -> printRemaining()
             Action.EXIT -> return false
-            else -> {}
+            Action.NULL -> {}
         }
         return true
     }
@@ -125,6 +125,10 @@ class CoffeeMachine {
 
 fun main() {
     val machine = CoffeeMachine()
-    while (machine.chooseAction()) {}
+    while (true) {
+        if (!machine.chooseAction()) {
+            break
+        }
+    }
 
 }
